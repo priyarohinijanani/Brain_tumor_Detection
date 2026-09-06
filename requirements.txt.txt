@@ -1,5 +1,5 @@
 streamlit
-tensorflow-cpu
-pillow
+tensorflow
 numpy
-reportlab
+pillow
+opencv-python-headless
