@@ -261,6 +261,7 @@ img {
 
 </style>
 """, unsafe_allow_html=True)
+
 st.title("🧠 Brain Tumor Detection")
 st.write("AI-Based Brain MRI Image Classification")
 
@@ -276,14 +277,9 @@ st.info(
 
 @st.cache_resource
 def load_my_model():
-    model_url = "https://huggingface.co/Priya-ai16/brain_tumor_model/resolve/main/brain_tumor_model.keras"
-
-    model_path = tf.keras.utils.get_file(
-        "brain_tumor_model.keras",
-        model_url
+    return tf.keras.models.load_model(
+        "model/brain_tumor_model.keras"
     )
-
-    return tf.keras.models.load_model(model_path)
 
 
 model = load_my_model()
